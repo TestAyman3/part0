@@ -1,0 +1,11 @@
+sequenceDiagram
+    participant browser
+    participant server
+
+    Note right of browser: L'utilisateur entre une note et clique sur "Envoyer"
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    activate server
+    server-->>browser: {"message": "Note added successfully"}
+    deactivate server
+
+    Note right of browser: Le navigateur met à jour la liste des notes sans recharger la page
